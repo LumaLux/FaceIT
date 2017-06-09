@@ -13,7 +13,6 @@ def compare(materialname):
             img1 = Image.open("./temp/" + filename2)
                     
             diff = ImageChops.difference(img1, img2)
-            diff.save ("difference.png")
             diff = diff.convert('L')
                     
             pixels = diff.getdata()
@@ -26,13 +25,10 @@ def compare(materialname):
                 else:
                     continue
             amount = len(pixels)            
-            percentage = str((black / float(amount)) * 100)
-            percentagenum = (black / float(amount)) * 100
-            print ("new file is " + percentage + "% the same as " + filename2)
-               
+            percentage = (black / float(amount)) * 100  
                 
-            if percentagenum > float(80):
-                print (percentage)
+            if percentage > float(80):
+                print (str(percentage))
                 os.remove("./temp/" + filename2)
                     
             else:
