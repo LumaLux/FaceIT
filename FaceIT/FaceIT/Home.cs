@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace FaceIT
 {
-    public partial class Add : Form
+    public partial class Form1 : Form
     {
-        public Add()
+        public Form1()
         {
             InitializeComponent();
         }

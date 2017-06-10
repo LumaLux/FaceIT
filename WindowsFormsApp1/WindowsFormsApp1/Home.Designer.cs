@@ -42,9 +42,9 @@
             this.selectButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.selectButton.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectButton.ForeColor = System.Drawing.Color.White;
-            this.selectButton.Location = new System.Drawing.Point(65, 220);
+            this.selectButton.Location = new System.Drawing.Point(382, 510);
             this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(180, 160);
+            this.selectButton.Size = new System.Drawing.Size(296, 269);
             this.selectButton.TabIndex = 1;
             this.selectButton.Text = "Select class";
             this.selectButton.UseVisualStyleBackColor = false;
@@ -57,9 +57,9 @@
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addButton.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(285, 220);
+            this.addButton.Location = new System.Drawing.Point(869, 510);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(180, 160);
+            this.addButton.Size = new System.Drawing.Size(296, 269);
             this.addButton.TabIndex = 2;
             this.addButton.Text = "Add class";
             this.addButton.UseVisualStyleBackColor = false;
@@ -72,9 +72,9 @@
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteButton.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.White;
-            this.deleteButton.Location = new System.Drawing.Point(519, 222);
+            this.deleteButton.Location = new System.Drawing.Point(1362, 510);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(180, 160);
+            this.deleteButton.Size = new System.Drawing.Size(296, 269);
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Delete Class";
             this.deleteButton.UseVisualStyleBackColor = false;
@@ -85,7 +85,7 @@
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.FaceIT;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(263, 267);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(782, 433);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.selectButton);
