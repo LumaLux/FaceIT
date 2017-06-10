@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace FaceIT
 {
-    public partial class Home : Form
+    public partial class Add : Form
     {
-        public Home()
+        public Add()
         {
             InitializeComponent();
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private void Add_Load(object sender, EventArgs e)
         {
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
@@ -43,15 +43,6 @@ namespace FaceIT
             return base.ProcessDialogKey(keyData);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Add().Show();
-        }
     }
 }
