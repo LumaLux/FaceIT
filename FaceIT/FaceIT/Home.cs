@@ -29,7 +29,7 @@ namespace FaceIT
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Close();
+                Application.Exit();
             }
         }
 
@@ -37,7 +37,7 @@ namespace FaceIT
         {
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
             {
-                this.Close();
+                Application.Exit();
                 return true;
             }
             return base.ProcessDialogKey(keyData);

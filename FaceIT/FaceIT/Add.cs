@@ -71,8 +71,8 @@ namespace FaceIT
                 cmd.Connection = conn;
 
                 cmd.Parameters.AddWithValue("@KlasNaam", ClassName.Text);
-                cmd.Parameters.AddWithValue("@AantalLeerlingen", AmountStudents.Text);
-                cmd.Parameters.AddWithValue("@AantalLessen", AmountLessons.Text);
+                cmd.Parameters.AddWithValue("@AantalLeerlingen", numericUpDown1.Text);
+                cmd.Parameters.AddWithValue("@AantalLessen", numericUpDown2.Text);
 
 
                 cmd.CommandText = myquerystring;

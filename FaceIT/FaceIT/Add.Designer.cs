@@ -32,13 +32,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Add_Button = new System.Windows.Forms.Button();
             this.ClassName = new System.Windows.Forms.TextBox();
-            this.AmountStudents = new System.Windows.Forms.TextBox();
-            this.AmountLessons = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -57,6 +59,7 @@
             // 
             this.Add_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(8)))), ((int)(((byte)(29)))));
             this.Add_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Button.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
             this.Add_Button.ForeColor = System.Drawing.Color.White;
             this.Add_Button.Location = new System.Drawing.Point(832, 738);
@@ -69,30 +72,16 @@
             // 
             // ClassName
             // 
-            this.ClassName.Location = new System.Drawing.Point(769, 434);
+            this.ClassName.Location = new System.Drawing.Point(769, 405);
             this.ClassName.Name = "ClassName";
             this.ClassName.Size = new System.Drawing.Size(364, 22);
             this.ClassName.TabIndex = 2;
-            // 
-            // AmountStudents
-            // 
-            this.AmountStudents.Location = new System.Drawing.Point(769, 532);
-            this.AmountStudents.Name = "AmountStudents";
-            this.AmountStudents.Size = new System.Drawing.Size(364, 22);
-            this.AmountStudents.TabIndex = 3;
-            // 
-            // AmountLessons
-            // 
-            this.AmountLessons.Location = new System.Drawing.Point(769, 619);
-            this.AmountLessons.Name = "AmountLessons";
-            this.AmountLessons.Size = new System.Drawing.Size(364, 22);
-            this.AmountLessons.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(866, 390);
+            this.label1.Location = new System.Drawing.Point(866, 361);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 41);
             this.label1.TabIndex = 5;
@@ -103,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(798, 488);
+            this.label2.Location = new System.Drawing.Point(798, 474);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(310, 41);
             this.label2.TabIndex = 6;
@@ -113,7 +102,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(791, 575);
+            this.label3.Location = new System.Drawing.Point(798, 575);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(290, 41);
             this.label3.TabIndex = 7;
@@ -129,18 +118,32 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Add a class";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(769, 518);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(364, 22);
+            this.numericUpDown1.TabIndex = 9;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(769, 632);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(364, 22);
+            this.numericUpDown2.TabIndex = 10;
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.AmountLessons);
-            this.Controls.Add(this.AmountStudents);
             this.Controls.Add(this.ClassName);
             this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.pictureBox1);
@@ -149,6 +152,8 @@
             this.Text = "Add";
             this.Load += new System.EventHandler(this.Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +164,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Add_Button;
         private System.Windows.Forms.TextBox ClassName;
-        private System.Windows.Forms.TextBox AmountStudents;
-        private System.Windows.Forms.TextBox AmountLessons;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
     }
 }
