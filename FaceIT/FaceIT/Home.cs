@@ -24,7 +24,7 @@ namespace FaceIT
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
         }
-
+        
         private void Form_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -43,15 +43,15 @@ namespace FaceIT
             return base.ProcessDialogKey(keyData);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             new Add().Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new Popupform().Show();
         }
     }
 }

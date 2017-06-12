@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Collections.Specialized;
+using MySql.Data;
+using System.Configuration;
+
 
 namespace FaceIT
 {
@@ -29,7 +34,9 @@ namespace FaceIT
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Close();
+                Application.Exit();
+
+
             }
         }
 
@@ -37,12 +44,61 @@ namespace FaceIT
         {
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
             {
-                this.Close();
+                Application.Exit();
                 return true;
             }
             return base.ProcessDialogKey(keyData);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Initialize connection / command
+            MySql.Data.MySqlClient.MySqlConnection conn;
+            MySql.Data.MySqlClient.MySqlCommand cmd;
 
+            conn = new MySql.Data.MySqlClient.MySqlConnection();
+            cmd = new MySql.Data.MySqlClient.MySqlCommand();
+
+            // Set connection / query
+            conn.ConnectionString = "server=localhost;uid=root;pwd=;database=project_innovate;";
+            string myquerystring = "INSERT INTO klas (KlasNaam, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @AantalLeerlingen, @AantalLessen)";
+
+            // Check the connection and the query
+            try
+            {
+                // Open the connection and execute command (query)
+                conn.Open();
+                cmd.Connection = conn;
+
+                cmd.Parameters.AddWithValue("@KlasNaam", ClassName.Text);
+                cmd.Parameters.AddWithValue("@AantalLeerlingen", AmountStudents.Text);
+                cmd.Parameters.AddWithValue("@AantalLessen", AmountLessons.Text);
+
+
+                cmd.CommandText = myquerystring;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Row Inserted into database successfully!",
+                "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                // Close connection
+                conn.Close();
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                // Show error
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Home().Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
