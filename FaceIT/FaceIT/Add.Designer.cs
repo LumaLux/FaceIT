@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -62,7 +63,7 @@
             this.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Button.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
             this.Add_Button.ForeColor = System.Drawing.Color.White;
-            this.Add_Button.Location = new System.Drawing.Point(832, 738);
+            this.Add_Button.Location = new System.Drawing.Point(679, 738);
             this.Add_Button.Name = "Add_Button";
             this.Add_Button.Size = new System.Drawing.Size(246, 97);
             this.Add_Button.TabIndex = 1;
@@ -132,12 +133,28 @@
             this.numericUpDown2.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown2.TabIndex = 10;
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(8)))), ((int)(((byte)(29)))));
+            this.Back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
+            this.Back.ForeColor = System.Drawing.Color.White;
+            this.Back.Location = new System.Drawing.Point(973, 738);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(246, 97);
+            this.Back.TabIndex = 11;
+            this.Back.Text = "Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label4);
@@ -170,5 +187,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Button Back;
     }
 }
