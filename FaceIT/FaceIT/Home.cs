@@ -48,16 +48,25 @@ namespace FaceIT
             this.Hide();
             new Add().Show();
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            new Popupform().Show();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {          
             new Delete().Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new About().Show();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new Exit().Show();
+        }
+
+        private void SelectButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Select().Show();
         }
     }
 }

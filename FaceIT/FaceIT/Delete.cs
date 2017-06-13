@@ -10,8 +10,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Collections.Specialized;
 using MySql.Data;
-using System.Configuration;
 using MySql.Data.MySqlClient;
+using System.Configuration;
+
 
 namespace FaceIT
 {
@@ -29,7 +30,7 @@ namespace FaceIT
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=;database=project_innovate;"))
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM klas", con))
             {
                 DataTable klasTable = new DataTable();
@@ -65,7 +66,7 @@ namespace FaceIT
 
         private void Delete_Button_Click(object sender, EventArgs e)
         {
-            //string text = listBox1.SelectedItem.ToString();
+            string text = listBox1.SelectedItem.ToString();
             //MessageBox.Show(text); 
             DataRowView drv = (DataRowView)listBox1.SelectedItem;
             String valueOfItem = drv["KlasNaam"].ToString();
@@ -104,6 +105,12 @@ namespace FaceIT
         }
 
         private void Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Home().Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
             new Home().Show();

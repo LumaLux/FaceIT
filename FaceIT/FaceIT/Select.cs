@@ -10,24 +10,20 @@ using System.Windows.Forms;
 
 namespace FaceIT
 {
-    public partial class Exit : Form
+    public partial class Select : Form
     {
-        public Exit()
+        public Select()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
+            new Home().Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Popupform_Load(object sender, EventArgs e)
+        private void Select_Load(object sender, EventArgs e)
         {
 
         }

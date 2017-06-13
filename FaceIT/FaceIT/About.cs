@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace FaceIT
 {
-    public partial class Exit : Form
+    public partial class About : Form
     {
-        public Exit()
+        public About()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            this.Hide();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void About_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+
         }
 
-        private void Popupform_Load(object sender, EventArgs e)
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

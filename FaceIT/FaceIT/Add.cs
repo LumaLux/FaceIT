@@ -106,5 +106,11 @@ namespace FaceIT
             this.Close();
             new Home().Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Home().Show();
+        }
     }
 }
