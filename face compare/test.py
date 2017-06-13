@@ -12,7 +12,7 @@ import face_recognition
 robin_image = face_recognition.load_image_file("67.png")
 frank_image = face_recognition.load_image_file("99.png")
 niels_image = face_recognition.load_image_file("75.png")
-unknown_image = face_recognition.load_image_file("70.png")
+unknown_image = face_recognition.load_image_file("picture-56.jpg")
 
 # Get the face encodings for each face in each image file
 # Since there could be more than one face in each image, it returns a list of encordings.
