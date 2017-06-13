@@ -12,7 +12,9 @@ import os
 import sys
 import select
 import time
-from PIL import Image
+import test
+import test2
+#from PIL import Image
 #import v4l2capture
 #voor pi...
 
@@ -50,6 +52,8 @@ while True:
         for filename in os.listdir("./temp/"):
             if filename.endswith(".png"):
                 os.rename("./temp/" + filename, "./Processed/" + datetime + "/" + filename)
+        test.facecheck(datetime)
+        test2.facecompare(datetime)
         print (datetime)
         break
     i += 1
@@ -70,8 +74,9 @@ while True:
         cv2.imwrite("./temp/%02d" % (count, )+".png", crop_img)
         newimgname = "%02d" % (count, ) + ".png"
         compare.compare(newimgname)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
     
-    #cv2.imshow('frame', frame)
+    cv2.imshow('frame', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
