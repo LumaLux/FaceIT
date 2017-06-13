@@ -11,7 +11,6 @@ import compare
 import os
 import sys
 import select
-import time
 import test
 import test2
 #from PIL import Image
@@ -47,14 +46,9 @@ while True:
     print ("Press Enter to stop process.")
     print (i)
     if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:
-        datetime = time.strftime("%c")
-        os.makedirs("./Processed/" + datetime)
-        for filename in os.listdir("./temp/"):
-            if filename.endswith(".png"):
-                os.rename("./temp/" + filename, "./Processed/" + datetime + "/" + filename)
-        test.facecheck(datetime)
-        test2.facecompare(datetime)
-        print (datetime)
+        test.facecheck()
+        test2.facecompare()
+        print ("done")
         break
     i += 1
 
