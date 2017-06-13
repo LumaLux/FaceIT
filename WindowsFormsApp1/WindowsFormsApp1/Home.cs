@@ -29,7 +29,8 @@ namespace WindowsFormsApp1
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Home().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -39,8 +40,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Add().Show();
+    
         }
 
         private void selectButton_Click(object sender, EventArgs e)
