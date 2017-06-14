@@ -17,6 +17,7 @@ def facecompare():
     
     dirs = os.listdir(klas)
     i=0
+    c = len(dirs)
     if dirs == []:
         for filename in os.listdir(temp):
             i+=1
@@ -44,6 +45,7 @@ def facecompare():
                 else:
                     i+=1
             if searching:
-                os.makedirs(klas + "%02d" % (len(dirs)+1, ))
-                os.rename(temp + filename, klas + "%02d" % (len(dirs)+1, ) + "/" + datetime)
+                c+=1
+                os.makedirs(klas + "%02d" % (c, ))
+                os.rename(temp + filename, klas + "%02d" % (c, ) + "/" + datetime)
                 print("new student made")
