@@ -19,8 +19,8 @@ namespace FaceIT
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
             new Home().Show();
+            this.Close();
         }
 
         private void Select_Load(object sender, EventArgs e)

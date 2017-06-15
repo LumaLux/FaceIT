@@ -31,12 +31,17 @@ namespace FaceIT
             this.Size = new Size(w, h);
 
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM klas", con))
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
             {
+                
+
                 DataTable klasTable = new DataTable();
                 adapter.Fill(klasTable);
-                listBox1.DisplayMember = "KlasNaam";
-                listBox1.DataSource = klasTable;
+                //listBox1.DisplayMember = "KlasNaam";
+                //listBox1.DataSource = klasTable;
+
+                foreach (DataRow row in klasTable.Rows)
+                    listBox1.Items.Add(string.Format("{0}  -  Periode {1}", row[0], row[1]));
             }
         }
 
@@ -64,7 +69,7 @@ namespace FaceIT
             new Home().Show();
         }
 
-        private void Delete_Button_Click(object sender, EventArgs e)
+        private void Delete_Button_Click_1(object sender, EventArgs e)
         {
             string text = listBox1.SelectedItem.ToString();
             //MessageBox.Show(text); 
@@ -72,14 +77,14 @@ namespace FaceIT
             String valueOfItem = drv["KlasNaam"].ToString();
             //MessageBox.Show(valueOfItem);
 
-            MySql.Data.MySqlClient.MySqlConnection conn;
-            MySql.Data.MySqlClient.MySqlCommand cmd;
+            MySqlConnection conn;
+            MySqlCommand cmd;
 
-            conn = new MySql.Data.MySqlClient.MySqlConnection();
-            cmd = new MySql.Data.MySqlClient.MySqlCommand();
+            conn = new MySqlConnection();
+            cmd = new MySqlCommand();
 
-            // Set connection / query
-            conn.ConnectionString = "server=localhost;uid=root;pwd=;database=project_innovate;";
+            // Set connectionstring and delete query
+            conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=project_innovate;";
             string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam";
 
             // Check the connection and the query
@@ -96,6 +101,10 @@ namespace FaceIT
                 // Close connection                
                 conn.Close();
 
+                //Refreshing the page 
+                new Delete().Show();
+                this.Hide();
+
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
@@ -106,14 +115,19 @@ namespace FaceIT
 
         private void Back_Click(object sender, EventArgs e)
         {
-            this.Close();
             new Home().Show();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
             new Home().Show();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

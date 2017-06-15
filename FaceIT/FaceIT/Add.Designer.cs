@@ -39,9 +39,12 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.button5 = new System.Windows.Forms.Button();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -63,7 +66,7 @@
             this.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Button.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
             this.Add_Button.ForeColor = System.Drawing.Color.White;
-            this.Add_Button.Location = new System.Drawing.Point(827, 748);
+            this.Add_Button.Location = new System.Drawing.Point(825, 800);
             this.Add_Button.Name = "Add_Button";
             this.Add_Button.Size = new System.Drawing.Size(246, 97);
             this.Add_Button.TabIndex = 1;
@@ -73,16 +76,17 @@
             // 
             // ClassName
             // 
-            this.ClassName.Location = new System.Drawing.Point(769, 405);
+            this.ClassName.Location = new System.Drawing.Point(769, 345);
             this.ClassName.Name = "ClassName";
             this.ClassName.Size = new System.Drawing.Size(364, 22);
             this.ClassName.TabIndex = 2;
+            this.ClassName.TextChanged += new System.EventHandler(this.ClassName_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(866, 361);
+            this.label1.Location = new System.Drawing.Point(858, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 41);
             this.label1.TabIndex = 5;
@@ -93,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(798, 474);
+            this.label2.Location = new System.Drawing.Point(798, 531);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(310, 41);
             this.label2.TabIndex = 6;
@@ -103,7 +107,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(798, 575);
+            this.label3.Location = new System.Drawing.Point(798, 663);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(290, 41);
             this.label3.TabIndex = 7;
@@ -121,14 +125,14 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(769, 518);
+            this.numericUpDown1.Location = new System.Drawing.Point(769, 588);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown1.TabIndex = 9;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(769, 632);
+            this.numericUpDown2.Location = new System.Drawing.Point(769, 723);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown2.TabIndex = 10;
@@ -140,7 +144,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Calibri", 11.2F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(12, 1019);
+            this.button5.Location = new System.Drawing.Point(1750, 1019);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 49);
             this.button5.TabIndex = 12;
@@ -148,12 +152,33 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(769, 467);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(364, 22);
+            this.numericUpDown3.TabIndex = 13;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(877, 406);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 41);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Periode:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
@@ -172,6 +197,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +215,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label5;
     }
 }

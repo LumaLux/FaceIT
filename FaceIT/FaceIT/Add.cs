@@ -61,7 +61,7 @@ namespace FaceIT
 
             // Set connection / query
             conn.ConnectionString = "server=localhost;uid=root;pwd=;database=project_innovate;";
-            string myquerystring = "INSERT INTO klas (KlasNaam, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @AantalLeerlingen, @AantalLessen)";
+            string myquerystring = "INSERT INTO klas (KlasNaam, Periode, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @Periode, @AantalLeerlingen, @AantalLessen)";
 
             // Check the connection and the query
             try
@@ -71,16 +71,20 @@ namespace FaceIT
                 cmd.Connection = conn;
 
                 cmd.Parameters.AddWithValue("@KlasNaam", ClassName.Text);
+                cmd.Parameters.AddWithValue("@Periode", numericUpDown3.Text);
                 cmd.Parameters.AddWithValue("@AantalLeerlingen", numericUpDown1.Text);
                 cmd.Parameters.AddWithValue("@AantalLessen", numericUpDown2.Text);
 
 
                 cmd.CommandText = myquerystring;
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Row successfully added!",
+                MessageBox.Show("Class successfully added!",
                 "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 // Close connection
                 conn.Close();
+                //Refreshing the page
+                new Add().Show();
+                this.Hide();
 
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -111,6 +115,21 @@ namespace FaceIT
         {
             this.Close();
             new Home().Show();
+        }
+
+        private void ClassName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
