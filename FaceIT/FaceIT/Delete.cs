@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Collections.Specialized;
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -119,10 +118,10 @@ namespace FaceIT
                  cmd.Connection = conn;
                  cmd.CommandText = myquerystring;
                  cmd.Parameters.AddWithValue("@KlasNaam", KlasNaam);
-                cmd.Parameters.AddWithValue("@Periode", Periode);
-                cmd.ExecuteNonQuery();
-                 MessageBox.Show("Class is deleted successfully!",
-                 "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                 cmd.Parameters.AddWithValue("@Periode", Periode);
+                 cmd.ExecuteNonQuery();
+                 MessageBox.Show("Class is successfully deleted!",
+                 "Succes!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                  // Close connection                
                  conn.Close();
 
