@@ -18,6 +18,9 @@ namespace FaceIT
 {
     public partial class Delete : Form
     {
+        private object KlasNaam;
+        private object Periode;
+
         public Delete()
         {
             InitializeComponent();
@@ -71,46 +74,68 @@ namespace FaceIT
 
         private void Delete_Button_Click_1(object sender, EventArgs e)
         {
-            string text = listBox1.SelectedItem.ToString();
-            //MessageBox.Show(text); 
-            DataRowView drv = (DataRowView)listBox1.SelectedItem;
-            String valueOfItem = drv["KlasNaam"].ToString();
-            //MessageBox.Show(valueOfItem);
-
-            MySqlConnection conn;
-            MySqlCommand cmd;
-
-            conn = new MySqlConnection();
-            cmd = new MySqlCommand();
-
-            // Set connectionstring and delete query
-            conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=project_innovate;";
-            string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam";
-
-            // Check the connection and the query
-            try
+            /* string text = listBox1.SelectedItem.ToString();
+             //MessageBox.Show(text); 
+             DataRowView drv = (DataRowView)listBox1.SelectedItem;
+             String valueOfItem = drv["KlasNaam"].ToString();
+             MessageBox.Show(valueOfItem);*/
+            Text = listBox1.SelectedItem.ToString();
+            string[] lines = Text.Split(new[] { "  -  Periode " }, StringSplitOptions.None);
+            int count = 0;
+            foreach (string line in lines)
             {
-                // Open the connection and execute command (query)
-                conn.Open();
-                cmd.Connection = conn;
-                cmd.CommandText = myquerystring;
-                cmd.Parameters.AddWithValue("@KlasNaam", valueOfItem);
+                if(count == 0)
+                {
+                    KlasNaam = line;
+                }
+                if (count == 1)
+                {                   
+                    int x = Int32.Parse(line);
+                    Periode = x;
+                }
+                count++;
+            }
+
+
+            //MessageBox.Show();
+
+
+
+             MySqlConnection conn;
+             MySqlCommand cmd;
+
+             conn = new MySqlConnection();
+             cmd = new MySqlCommand();
+
+             // Set connectionstring and delete query
+             conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=project_innovate;";
+             string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam AND Periode=@Periode;";
+
+             // Check the connection and the query
+             try
+             {
+                 // Open the connection and execute command (query)
+                 conn.Open();
+                 cmd.Connection = conn;
+                 cmd.CommandText = myquerystring;
+                 cmd.Parameters.AddWithValue("@KlasNaam", KlasNaam);
+                cmd.Parameters.AddWithValue("@Periode", Periode);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Class is deleted successfully!",
-                "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                // Close connection                
-                conn.Close();
+                 MessageBox.Show("Class is deleted successfully!",
+                 "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                 // Close connection                
+                 conn.Close();
 
-                //Refreshing the page 
-                new Delete().Show();
-                this.Hide();
+                 //Refreshing the page 
+                 new Delete().Show();
+                 this.Hide();
 
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                // Show error
-                MessageBox.Show(ex.Message);
-            }
+             }
+             catch (MySql.Data.MySqlClient.MySqlException ex)
+             {
+                 // Show error
+                 MessageBox.Show(ex.Message);
+             }
         }
 
         private void Back_Click(object sender, EventArgs e)
