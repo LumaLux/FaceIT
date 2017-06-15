@@ -22,8 +22,8 @@ def dbClose():
 def newStudent(klas, periode, folder):
     try:
         with connection.cursor() as cursor:
-            sql = "INSERT INTO `leerling` (`Aanwezig`, `Klas_KlasNaam`, `Klas_Periode`) VALUES (%s, %s, %s)"
-            cursor.execute(sql, (folder, klas, periode))
+            sql = "INSERT INTO `leerling` (`Aanwezig`, `Klas_KlasNaam`, `Klas_Periode`, `Folder`) VALUES (%s, %s, %s, %s)"
+            cursor.execute(sql, ("1", klas, periode, folder))
         connection.commit()
     except Exception as e:
         print('Got error {!r}, errno is {}'.format(e, e.args[0]))
