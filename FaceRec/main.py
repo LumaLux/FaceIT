@@ -11,8 +11,8 @@ import compare
 import os
 import sys
 import select
-import test
-import test2
+import order
+import check
 #from PIL import Image
 #import v4l2capture
 #voor pi...
@@ -46,8 +46,8 @@ while True:
     print ("Press Enter to stop process.")
     print (i)
     if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:
-        test.facecheck()
-        test2.facecompare()
+        check.facecheck()
+        order.facecompare()
         print ("done")
         break
     i += 1
