@@ -25,6 +25,17 @@ namespace FaceIT
             InitializeComponent();
         }
 
+        //Setting the escape key to exit the application when needed
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                Application.Exit();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
+
         private void Delete_Load(object sender, EventArgs e)
         {
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -39,9 +50,8 @@ namespace FaceIT
 
                 DataTable klasTable = new DataTable();
                 adapter.Fill(klasTable);
-                //listBox1.DisplayMember = "KlasNaam";
-                //listBox1.DataSource = klasTable;
 
+                // Putting the KlasNaam and periode in a string to display in the listBox
                 foreach (DataRow row in klasTable.Rows)
                     listBox1.Items.Add(string.Format("{0}  -  Periode {1}", row[0], row[1]));
             }
@@ -73,11 +83,7 @@ namespace FaceIT
 
         private void Delete_Button_Click_1(object sender, EventArgs e)
         {
-            /* string text = listBox1.SelectedItem.ToString();
-             //MessageBox.Show(text); 
-             DataRowView drv = (DataRowView)listBox1.SelectedItem;
-             String valueOfItem = drv["KlasNaam"].ToString();
-             MessageBox.Show(valueOfItem);*/
+            // Splitting the string to get the KlasNaam
             Text = listBox1.SelectedItem.ToString();
             string[] lines = Text.Split(new[] { "  -  Periode " }, StringSplitOptions.None);
             int count = 0;
@@ -95,18 +101,13 @@ namespace FaceIT
                 count++;
             }
 
-
-            //MessageBox.Show();
-
-
-
              MySqlConnection conn;
              MySqlCommand cmd;
 
              conn = new MySqlConnection();
              cmd = new MySqlCommand();
 
-             // Set connectionstring and delete query
+             // Setting connectionstring and delete query
              conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=project_innovate;";
              string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam AND Periode=@Periode;";
 

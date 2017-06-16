@@ -17,6 +17,16 @@ namespace FaceIT
         {
             InitializeComponent();
         }
+        //Setting the escape key to exit the application when needed
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                Application.Exit();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -47,7 +57,8 @@ namespace FaceIT
 
         private void Select_Button_Click(object sender, EventArgs e)
         {
-
+            new Presence().Show();
+            this.Close();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -118,6 +118,107 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="listBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 317</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listBox1.ItemHeight" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;listBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button5.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Start_Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1293, 317</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AADKxsX/GgYD/xwJBv8cCQb/HAgG/xwIBv8cCAb/HAgG/xwIBv8cCAb/HAgG/xwIBv8cCQb/HAgG/xoG
+        BP/Kx8b/ysbF/xsGA/8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0I
+        Bf8aBgP/ysfG/8rGxf8bBgP/HQgF/x0IBf8eCQb/HQgF/x4JBv8eCQb/HQgF/x4JBv8dCAX/HQgG/x0I
+        Bf8eCQb/GgYD/8rHxv/Lxsb/GQQB/xwHBP8dCAX/FwIA/xwHBP8aBQP/GAMC/x0HBf8WAQD/HAcE/xsG
+        A/8dCAX/GwYD/xsGA//Kx8b/ycTE/yENC/8gCwj/HgoH/zMgHv8fCwn/KBYU/zIgHf8dCgj/NyUj/yEN
+        Cv8jDwz/HwsI/yURDv8ZBQL/y8fG/7u1tf9qXVv/TDw6/0IyL/+wqqn/a15c/4l+ff9OQD7/gnd1/3Zs
+        a/9JOjj/bmBe/zYlI/98cW//DgAA/83Kyf+5tLP/bmJh/5KJh/8sHBr/mZOS/3twb/+FfHr/OCgm/4mA
+        f/+fl5b/ZVlX/25jYf8uISD/eXJy/wgAAP/Py8r/u7W0/2dbWf+OhIP/JxYT/1FDQf8mExH/Oioo/0k5
+        N/8oFxX/SDk3/0AwLv9uYmD/ZFlX/6ympf8lExD/yMTD/8nEw/8hDgv/QjMx/yYTEP8SAAD/HQgG/xgF
+        A/8UAgH/GwYE/wwAAP83JyT/ZFdW/y4dG/9AMS7/JRIQ/8jEw//Lxsb/GQQB/xAAAP8NAAD/FgMC/xcD
+        Av8ZBQP/HwoH/x4JBv8bBgP/KhsZ/0g5N/8RAAD/FgEB/xgEAv/Lx8b/y8bG/xoGA/8vHBn/a11b/7q0
+        s/+tp6b/TT06/xUAAP8fCgf/HggF/xcGA/8WBAL/HwoH/x4KB/8bBgP/ysfG/8bBwP8oFRP/5ePi////
+        ///9/f3//////2hbWv8RAAD/IAsI/x0IBf8eCQb/HgkG/x0IBf8dCAX/GgYD/8rHxv/Z19b/sqyr/+fl
+        5f/39/f/ubSz/3FlY/8nFBH/GwYD/x4JBv8dCAX/HQgF/x0IBf8dCAX/HQgF/xoGA//Kx8b/1dLR/4d+
+        fP9GNzX/Py0r/xEAAP8OAAD/GgYD/x4IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8aBgP/ysfG/9rX
+        1/+SiYj/EAIC/xYBAP8gCgf/IAwJ/x4JBv8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/GgYD/8rH
+        xv/6+vr//Pz7/3dqaf8XAQD/HgoH/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/xoG
+        A//Kx8b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 295</value>
+  </data>
+  <data name="Select_Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1293, 436</value>
+  </data>
+  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1750, 1019</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Start_Button.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 20.2pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="&gt;&gt;listBox1.Name" xml:space="preserve">
+    <value>listBox1</value>
+  </data>
+  <data name="&gt;&gt;Start_Button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Start_Button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;Select_Button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Start_Button.Text" xml:space="preserve">
+    <value>Start class</value>
+  </data>
+  <data name="Select_Button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1920, 1080</value>
+  </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAjkAAAI5CAIAAADMibw6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
@@ -1647,28 +1748,85 @@
         tCo1Uah+7x5//P8B52rtbEnE1OkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
-        AADKxsX/GgYD/xwJBv8cCQb/HAgG/xwIBv8cCAb/HAgG/xwIBv8cCAb/HAgG/xwIBv8cCQb/HAgG/xoG
-        BP/Kx8b/ysbF/xsGA/8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0I
-        Bf8aBgP/ysfG/8rGxf8bBgP/HQgF/x0IBf8eCQb/HQgF/x4JBv8eCQb/HQgF/x4JBv8dCAX/HQgG/x0I
-        Bf8eCQb/GgYD/8rHxv/Lxsb/GQQB/xwHBP8dCAX/FwIA/xwHBP8aBQP/GAMC/x0HBf8WAQD/HAcE/xsG
-        A/8dCAX/GwYD/xsGA//Kx8b/ycTE/yENC/8gCwj/HgoH/zMgHv8fCwn/KBYU/zIgHf8dCgj/NyUj/yEN
-        Cv8jDwz/HwsI/yURDv8ZBQL/y8fG/7u1tf9qXVv/TDw6/0IyL/+wqqn/a15c/4l+ff9OQD7/gnd1/3Zs
-        a/9JOjj/bmBe/zYlI/98cW//DgAA/83Kyf+5tLP/bmJh/5KJh/8sHBr/mZOS/3twb/+FfHr/OCgm/4mA
-        f/+fl5b/ZVlX/25jYf8uISD/eXJy/wgAAP/Py8r/u7W0/2dbWf+OhIP/JxYT/1FDQf8mExH/Oioo/0k5
-        N/8oFxX/SDk3/0AwLv9uYmD/ZFlX/6ympf8lExD/yMTD/8nEw/8hDgv/QjMx/yYTEP8SAAD/HQgG/xgF
-        A/8UAgH/GwYE/wwAAP83JyT/ZFdW/y4dG/9AMS7/JRIQ/8jEw//Lxsb/GQQB/xAAAP8NAAD/FgMC/xcD
-        Av8ZBQP/HwoH/x4JBv8bBgP/KhsZ/0g5N/8RAAD/FgEB/xgEAv/Lx8b/y8bG/xoGA/8vHBn/a11b/7q0
-        s/+tp6b/TT06/xUAAP8fCgf/HggF/xcGA/8WBAL/HwoH/x4KB/8bBgP/ysfG/8bBwP8oFRP/5ePi////
-        ///9/f3//////2hbWv8RAAD/IAsI/x0IBf8eCQb/HgkG/x0IBf8dCAX/GgYD/8rHxv/Z19b/sqyr/+fl
-        5f/39/f/ubSz/3FlY/8nFBH/GwYD/x4JBv8dCAX/HQgF/x0IBf8dCAX/HQgF/xoGA//Kx8b/1dLR/4d+
-        fP9GNzX/Py0r/xEAAP8OAAD/GgYD/x4IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8aBgP/ysfG/9rX
-        1/+SiYj/EAIC/xYBAP8gCgf/IAwJ/x4JBv8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/GgYD/8rH
-        xv/6+vr//Pz7/3dqaf8XAQD/HgoH/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/x0IBf8dCAX/HQgF/xoG
-        A//Kx8b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAA==
-</value>
+  <data name="&gt;&gt;button5.Name" xml:space="preserve">
+    <value>button5</value>
   </data>
+  <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 49</value>
+  </data>
+  <data name="&gt;&gt;Select_Button.Name" xml:space="preserve">
+    <value>Select_Button</value>
+  </data>
+  <data name="&gt;&gt;listBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Select_Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 97</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Start_Button.Name" xml:space="preserve">
+    <value>Start_Button</value>
+  </data>
+  <data name="Select_Button.Text" xml:space="preserve">
+    <value>View presence</value>
+  </data>
+  <data name="Start_Button.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;Select_Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Select_Button.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 596</value>
+  </data>
+  <data name="&gt;&gt;Start_Button.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Start_Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 97</value>
+  </data>
+  <data name="Select_Button.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 20.2pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="&gt;&gt;Start_Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.2pt, style=Bold</value>
+  </data>
+  <data name="Select_Button.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="button5.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
