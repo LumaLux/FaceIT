@@ -33,6 +33,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Aanwezig = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Klas_KlasNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +66,15 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(510, 321);
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Aanwezig,
+            this.Klas_KlasNaam});
+            this.listView1.Location = new System.Drawing.Point(649, 320);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(959, 546);
+            this.listView1.Size = new System.Drawing.Size(725, 467);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.Load += new System.EventHandler(this.Presence_Load);
             // 
             // label1
             // 
@@ -98,6 +104,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presence";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Presence_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,5 +117,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Aanwezig;
+        private System.Windows.Forms.ColumnHeader Klas_KlasNaam;
     }
 }
