@@ -34,6 +34,7 @@
             this.Select_Button = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Start_Button = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,12 +43,13 @@
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button5
             // 
-            resources.ApplyResources(this.button5, "button5");
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(8)))), ((int)(((byte)(29)))));
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.button5, "button5");
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = false;
@@ -55,9 +57,9 @@
             // 
             // Select_Button
             // 
-            resources.ApplyResources(this.Select_Button, "Select_Button");
             this.Select_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(8)))), ((int)(((byte)(29)))));
             this.Select_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.Select_Button, "Select_Button");
             this.Select_Button.ForeColor = System.Drawing.Color.White;
             this.Select_Button.Name = "Select_Button";
             this.Select_Button.UseVisualStyleBackColor = false;
@@ -65,37 +67,43 @@
             // 
             // listBox1
             // 
-            resources.ApplyResources(this.listBox1, "listBox1");
             this.listBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.listBox1, "listBox1");
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Start_Button
             // 
-            resources.ApplyResources(this.Start_Button, "Start_Button");
             this.Start_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(8)))), ((int)(((byte)(29)))));
             this.Start_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.Start_Button, "Start_Button");
             this.Start_Button.ForeColor = System.Drawing.Color.White;
             this.Start_Button.Name = "Start_Button";
             this.Start_Button.UseVisualStyleBackColor = false;
             this.Start_Button.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // Select
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.Start_Button);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Select_Button);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Select";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Select_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -106,5 +114,6 @@
         private System.Windows.Forms.Button Select_Button;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button Start_Button;
+        private System.Windows.Forms.Label label4;
     }
 }

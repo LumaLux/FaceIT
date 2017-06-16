@@ -36,11 +36,6 @@ namespace FaceIT
 
         private void Select_Load(object sender, EventArgs e)
         {
-            int w = Screen.PrimaryScreen.Bounds.Width;
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            this.Location = new Point(0, 0);
-            this.Size = new Size(w, h);
-
             //Setting the connection info and setting the query to pull data from the database
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
@@ -69,6 +64,12 @@ namespace FaceIT
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Home().Show();
         }
     }
 }

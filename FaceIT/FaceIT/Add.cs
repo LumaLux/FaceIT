@@ -22,21 +22,11 @@ namespace FaceIT
             InitializeComponent();
         }
 
-        private void Add_Load(object sender, EventArgs e)
-        {
-            int w = Screen.PrimaryScreen.Bounds.Width;
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            this.Location = new Point(0, 0);
-            this.Size = new Size(w, h);
-        }
-
         private void Form_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
                 Application.Exit();
-
-
             }
         }
 
@@ -128,6 +118,11 @@ namespace FaceIT
         }
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

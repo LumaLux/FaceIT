@@ -53,7 +53,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 295);
+            this.pictureBox1.Size = new System.Drawing.Size(191, 195);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -66,9 +66,9 @@
             this.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Button.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
             this.Add_Button.ForeColor = System.Drawing.Color.White;
-            this.Add_Button.Location = new System.Drawing.Point(825, 800);
+            this.Add_Button.Location = new System.Drawing.Point(433, 551);
             this.Add_Button.Name = "Add_Button";
-            this.Add_Button.Size = new System.Drawing.Size(246, 97);
+            this.Add_Button.Size = new System.Drawing.Size(197, 97);
             this.Add_Button.TabIndex = 1;
             this.Add_Button.Text = "Add class";
             this.Add_Button.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@
             // 
             // ClassName
             // 
-            this.ClassName.Location = new System.Drawing.Point(769, 345);
+            this.ClassName.Location = new System.Drawing.Point(346, 234);
             this.ClassName.Name = "ClassName";
             this.ClassName.Size = new System.Drawing.Size(364, 22);
             this.ClassName.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(858, 289);
+            this.label1.Location = new System.Drawing.Point(426, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 41);
             this.label1.TabIndex = 5;
@@ -97,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(798, 531);
+            this.label2.Location = new System.Drawing.Point(359, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(310, 41);
             this.label2.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(798, 663);
+            this.label3.Location = new System.Drawing.Point(370, 440);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(290, 41);
             this.label3.TabIndex = 7;
@@ -117,22 +117,23 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 50.2F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(751, 127);
+            this.label4.Location = new System.Drawing.Point(306, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(429, 103);
             this.label4.TabIndex = 8;
             this.label4.Text = "Add a class";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(769, 588);
+            this.numericUpDown1.Location = new System.Drawing.Point(346, 405);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown1.TabIndex = 9;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(769, 723);
+            this.numericUpDown2.Location = new System.Drawing.Point(346, 498);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown2.TabIndex = 10;
@@ -144,7 +145,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Calibri", 11.2F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1750, 1019);
+            this.button5.Location = new System.Drawing.Point(836, 660);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 49);
             this.button5.TabIndex = 12;
@@ -154,7 +155,7 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(769, 467);
+            this.numericUpDown3.Location = new System.Drawing.Point(346, 313);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown3.TabIndex = 13;
@@ -164,7 +165,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(877, 406);
+            this.label5.Location = new System.Drawing.Point(454, 259);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 41);
             this.label5.TabIndex = 14;
@@ -176,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.button5);
@@ -189,11 +190,11 @@
             this.Controls.Add(this.ClassName);
             this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add";
-            this.Text = "Add";
-            this.Load += new System.EventHandler(this.Add_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FaceIT - Smart Absense 2017";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();

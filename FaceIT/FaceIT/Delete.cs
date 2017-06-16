@@ -38,10 +38,6 @@ namespace FaceIT
 
         private void Delete_Load(object sender, EventArgs e)
         {
-            int w = Screen.PrimaryScreen.Bounds.Width;
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            this.Location = new Point(0, 0);
-            this.Size = new Size(w, h);
 
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
@@ -63,16 +59,6 @@ namespace FaceIT
             {
                 Application.Exit();
             }
-        }
-
-        protected override bool ProcessDialogKey(Keys keyData)
-        {
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
-            {
-                Application.Exit();
-                return true;
-            }
-            return base.ProcessDialogKey(keyData);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

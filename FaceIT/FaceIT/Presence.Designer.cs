@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Presence));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Aanwezig = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Klas_KlasNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,10 +46,11 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 295);
+            this.pictureBox1.Size = new System.Drawing.Size(191, 195);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button5
             // 
@@ -56,7 +59,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Calibri", 11.2F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1750, 1019);
+            this.button5.Location = new System.Drawing.Point(836, 660);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 49);
             this.button5.TabIndex = 7;
@@ -70,16 +73,18 @@
             this.ID,
             this.Aanwezig,
             this.Klas_KlasNaam});
-            this.listView1.Location = new System.Drawing.Point(649, 320);
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.listView1.Location = new System.Drawing.Point(226, 210);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(725, 467);
+            this.listView1.Size = new System.Drawing.Size(550, 447);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(965, 290);
+            this.label1.Location = new System.Drawing.Point(443, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 9;
@@ -87,23 +92,33 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 50.2F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(319, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(358, 103);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Presence";
+            // 
             // Presence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Presence";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Presence";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "FaceIT - Smart Absense 2017";
             this.Load += new System.EventHandler(this.Presence_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -120,5 +135,6 @@
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Aanwezig;
         private System.Windows.Forms.ColumnHeader Klas_KlasNaam;
+        private System.Windows.Forms.Label label4;
     }
 }

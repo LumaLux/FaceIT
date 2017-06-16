@@ -35,6 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.About_Button = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 295);
+            this.pictureBox1.Size = new System.Drawing.Size(191, 195);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -55,9 +56,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(475, 473);
+            this.button1.Location = new System.Drawing.Point(156, 310);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(309, 281);
+            this.button1.Size = new System.Drawing.Size(209, 181);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add class";
             this.button1.UseVisualStyleBackColor = false;
@@ -70,9 +71,9 @@
             this.SelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SelectButton.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectButton.ForeColor = System.Drawing.Color.White;
-            this.SelectButton.Location = new System.Drawing.Point(897, 473);
+            this.SelectButton.Location = new System.Drawing.Point(415, 310);
             this.SelectButton.Name = "SelectButton";
-            this.SelectButton.Size = new System.Drawing.Size(309, 281);
+            this.SelectButton.Size = new System.Drawing.Size(209, 181);
             this.SelectButton.TabIndex = 2;
             this.SelectButton.Text = "Select class";
             this.SelectButton.UseVisualStyleBackColor = false;
@@ -85,9 +86,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1313, 473);
+            this.button3.Location = new System.Drawing.Point(672, 310);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(309, 281);
+            this.button3.Size = new System.Drawing.Size(209, 181);
             this.button3.TabIndex = 3;
             this.button3.Text = "Delete class";
             this.button3.UseVisualStyleBackColor = false;
@@ -100,7 +101,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Calibri", 11.2F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1576, 1019);
+            this.button5.Location = new System.Drawing.Point(836, 660);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 49);
             this.button5.TabIndex = 5;
@@ -115,34 +116,48 @@
             this.About_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.About_Button.Font = new System.Drawing.Font("Calibri", 11.2F, System.Drawing.FontStyle.Bold);
             this.About_Button.ForeColor = System.Drawing.Color.White;
-            this.About_Button.Location = new System.Drawing.Point(1740, 1019);
+            this.About_Button.Location = new System.Drawing.Point(672, 660);
             this.About_Button.Name = "About_Button";
             this.About_Button.Size = new System.Drawing.Size(158, 49);
             this.About_Button.TabIndex = 6;
             this.About_Button.Text = "About";
+            this.About_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.About_Button.UseVisualStyleBackColor = false;
             this.About_Button.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 50.2F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(388, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(252, 103);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Home";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.SelectButton);
             this.Controls.Add(this.About_Button);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FaceIT - Smart Absense 2017";
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,6 +169,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button About_Button;
+        private System.Windows.Forms.Label label4;
     }
 }
 
