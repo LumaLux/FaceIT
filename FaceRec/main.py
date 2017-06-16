@@ -24,6 +24,9 @@ import check
 #eind voor pi...
 
 cap = cv2.VideoCapture(0)
+klas = sys.argv[1]
+periode = sys.argv[2]
+
 #cap.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 200)
 #cap.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 200)
 
@@ -41,13 +44,19 @@ while True:
     #image_data = video.read_and_queue()
     #eind voor pi...
     
-    
     os.system('cls' if os.name == 'nt' else 'clear')
     print ("Press Enter to stop process.")
     print (i)
+    
+    if cv2.waitKey(1) & 0xFF == ord('\r'):
+        check.facecheck()
+        order.facecompare(klas, periode)
+        print ("done")
+        break
+    
     if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:
         check.facecheck()
-        order.facecompare()
+        order.facecompare(klas)
         print ("done")
         break
     i += 1
@@ -71,8 +80,6 @@ while True:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
     
     cv2.imshow('frame', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
 
 cap.release()
 cv2.destroyAllWindows()

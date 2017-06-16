@@ -11,11 +11,9 @@ import os
 import time
 import database
 
-def facecompare():
+def facecompare(klas, periode):
     datetime = time.strftime("%c")
-    folder = "./Processed/inf1/"
-    klas = "INF1"
-    periode = "4"
+    folder = "./Processed/" + klas + "-" + periode + "/"
     temp = "./temp/"
     
     dirs = os.listdir(folder)
@@ -51,5 +49,7 @@ def facecompare():
             if searching:
                 os.makedirs(folder + "%02d" % (len(dirs)+1, ))
                 os.rename(temp + filename, folder + "%02d" % (len(dirs)+1, ) + "/" + datetime)
-                database.newStudent(klas, periode, "%02d" % (i, ))
+                database.newStudent(klas, periode, "%02d" % (len(dirs)+1, ))
                 print("new student made")
+
+    database.dbClose()

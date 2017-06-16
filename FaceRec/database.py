@@ -12,7 +12,7 @@ import pymysql.cursors
 
 connection = pymysql.connect(host='localhost', 
                              user='root', 
-                             password='', 
+                             password='12345', 
                              db='FaceIT', 
                              charset='utf8mb4', 
                              cursorclass=pymysql.cursors.DictCursor)
