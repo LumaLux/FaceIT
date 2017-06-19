@@ -20,10 +20,11 @@ namespace FaceIT
 
         private void Presence_Load(object sender, EventArgs e)
         {
+            
             listView1.View = View.Details;
             MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;");
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM leerling", connection); 
-            // Where class is sleceted class lol AND ID MATCHES PHOTO ID LOL to get the right class
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM leerling WHERE Klas_KlasNaam = 'INF1E'", connection); 
+            // Where class is sleceted class (Placeholder INF1E),AND ID MATCHES PHOTO ID to get the right class
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 

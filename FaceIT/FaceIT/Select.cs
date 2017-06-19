@@ -52,8 +52,8 @@ namespace FaceIT
 
         private void Select_Button_Click(object sender, EventArgs e)
         {
-            new Presence().Show();
-            this.Close();
+          new Presence().Show();
+          this.Close();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
