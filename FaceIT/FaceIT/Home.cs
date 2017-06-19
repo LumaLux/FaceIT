@@ -62,7 +62,7 @@ namespace FaceIT
 
         private void SelectButton_Click_1(object sender, EventArgs e)
         {
-            new Select().Show();
+            new SelectPage().Show();
             this.Hide();
         }
     }
