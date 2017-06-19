@@ -23,6 +23,8 @@ import check
 #video.start()
 #eind voor pi...
 
+if not os.path.exists("./temp"):
+    os.makedirs("./temp")
 cap = cv2.VideoCapture(0)
 klas = sys.argv[1]
 periode = sys.argv[2]

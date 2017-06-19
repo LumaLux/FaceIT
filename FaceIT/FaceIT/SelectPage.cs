@@ -87,8 +87,15 @@ namespace FaceIT
                 count++;
 			}
 			Process proc = new System.Diagnostics.Process();
+			String path = System.Reflection.Assembly.GetEntryAssembly().Location;
+			if(path.EndsWith("Debug/FaceIT.exe")){
+				path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec");
+			}else if(path.EndsWith("Release/FaceIT.exe")){
+				path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec");
+			}
+			Console.WriteLine(path);
 			proc.StartInfo.FileName = "/bin/bash";
-			proc.StartInfo.Arguments = "-c \" " + "gnome-terminal -x bash -ic 'cd $HOME/Documents/FaceIT/FaceRec; ls; python3 main.py " + klas + " " + periode + "' \"";
+			proc.StartInfo.Arguments = "-c \" " + "gnome-terminal -x bash -ic 'cd " + path + "; python3 main.py " + klas + " " + periode + "' \"";
 			proc.StartInfo.UseShellExecute = false;
 			proc.StartInfo.RedirectStandardOutput = true;
 			proc.Start();
