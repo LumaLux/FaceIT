@@ -50,7 +50,8 @@ namespace FaceIT
             cmd = new MySql.Data.MySqlClient.MySqlCommand();
 
             // Set connection / query
-            conn.ConnectionString = "server=localhost;uid=root;pwd=;database=project_innovate;";
+            //conn.ConnectionString = "server=localhost;uid=root;pwd=;database=project_innovate;";
+            conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
             string myquerystring = "INSERT INTO klas (KlasNaam, Periode, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @Periode, @AantalLeerlingen, @AantalLessen)";
 
             // Check the connection and the query

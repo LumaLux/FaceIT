@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 namespace FaceIT
 {
@@ -40,7 +41,8 @@ namespace FaceIT
         {
             
             //Setting the connection info and setting the query to pull data from the database
-            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
+            //using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
+            using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
             {
                 
@@ -67,7 +69,34 @@ namespace FaceIT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            string Text = listBox1.SelectedItem.ToString();
+			string[] lines = Text.Split(new[] { "  -  Periode " }, StringSplitOptions.None);
+            int count = 0;
+            string klas = "";
+            int periode = 0;
+			foreach (string line in lines)
+			{
+				if (count == 0)
+				{
+					klas = line;
+				}
+				if (count == 1)
+				{
+					periode = Int32.Parse(line);
+				}
+                count++;
+			}
+			Process proc = new System.Diagnostics.Process();
+			proc.StartInfo.FileName = "/bin/bash";
+			proc.StartInfo.Arguments = "-c \" " + "gnome-terminal -x bash -ic 'cd $HOME/Documents/FaceIT/FaceRec; ls; python3 main.py " + klas + " " + periode + "' \"";
+			proc.StartInfo.UseShellExecute = false;
+			proc.StartInfo.RedirectStandardOutput = true;
+			proc.Start();
+
+			while (!proc.StandardOutput.EndOfStream)
+			{
+				Console.WriteLine(proc.StandardOutput.ReadLine());
+			}
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

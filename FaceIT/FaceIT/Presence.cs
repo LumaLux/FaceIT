@@ -55,7 +55,8 @@ namespace FaceIT
             label1.Text = String.Format("Class: {0}  -  Periode: {1}", KlasNaam, Periode);
 
             listView1.View = View.Details;
-            MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;");
+            //MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;");
+            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;");
             string cmd =String.Format("SELECT * FROM leerling WHERE Klas_KlasNaam = '{0}';", KlasNaam);
             //MessageBox.Show(cmd);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd, connection);
