@@ -124,12 +124,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SelectPage.aa-DJ.resx">
-      <DependentUpon>SelectPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SelectPage.aa.resx">
-      <DependentUpon>SelectPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SelectPage.resx">
       <DependentUpon>SelectPage.cs</DependentUpon>
     </EmbeddedResource>
