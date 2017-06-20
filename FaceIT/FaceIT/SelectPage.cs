@@ -39,10 +39,10 @@ namespace FaceIT
 
         private void Select_Load(object sender, EventArgs e)
         {
-            
+
             //Setting the connection info and setting the query to pull data from the database
-            //using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
-            using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;"))
+            //using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
             {
                 
@@ -57,9 +57,16 @@ namespace FaceIT
 
         private void Select_Button_Click(object sender, EventArgs e)
         {
-            SelectedItem = listBox1.SelectedItem.ToString();
-            new Presence().Show();
-            this.Close();
+            if (listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Select a class");
+            }
+            else
+            {
+                SelectedItem = listBox1.SelectedItem.ToString();
+                new Presence().Show();
+                this.Close();
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,9 +96,9 @@ namespace FaceIT
 			Process proc = new System.Diagnostics.Process();
 			String path = System.Reflection.Assembly.GetEntryAssembly().Location;
 			if(path.EndsWith("Debug/FaceIT.exe")){
-				path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec");
+				path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/");
 			}else if(path.EndsWith("Release/FaceIT.exe")){
-				path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec");
+				path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/");
 			}
 			Console.WriteLine(path);
 			proc.StartInfo.FileName = "/bin/bash";

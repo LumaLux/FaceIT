@@ -38,9 +38,9 @@ namespace FaceIT
 
         private void Delete_Load(object sender, EventArgs e)
         {
-           
-            //using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=project_innovate;"))
-            using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
+
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;"))
+            //using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
             {
                 
