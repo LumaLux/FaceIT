@@ -50,8 +50,14 @@ namespace FaceIT
             cmd = new MySql.Data.MySqlClient.MySqlCommand();
 
             // Set connection / query
-            conn.ConnectionString = "server=localhost;uid=root;pwd=;database=FaceIT;";
-            //conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
+			conn.ConnectionString = "";
+			string p = Environment.OSVersion.ToString();
+			if (p.Contains ("Unix")) {
+				conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
+			} else {
+				conn.ConnectionString = "server=localhost;uid=root;pwd=;database=FaceIT;";
+			}
+            
             string myquerystring = "INSERT INTO klas (KlasNaam, Periode, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @Periode, @AantalLeerlingen, @AantalLessen)";
 
             // Check the connection and the query

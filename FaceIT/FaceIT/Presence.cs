@@ -86,8 +86,13 @@ namespace FaceIT
 
 
             listView1.View = View.Details;
-            MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
-           // MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;");
+			MySqlConnection connection = null;
+			string p = Environment.OSVersion.ToString();
+			if (p.Contains ("Unix")) {
+				connection = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;");
+			} else {
+				connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
+			}
             string cmd =String.Format("SELECT * FROM leerling WHERE Klas_KlasNaam = '{0}';", KlasNaam);
             string cmd2 = String.Format("SELECT * FROM klas WHERE KlasNaam = '{0}';", KlasNaam);
             //MessageBox.Show(cmd);
