@@ -38,35 +38,20 @@ namespace FaceIT
 
         private void Delete_Load(object sender, EventArgs e)
         {
-			string p = Environment.OSVersion.ToString();
-			if (p.Contains ("Unix")) {
-				using (MySqlConnection con = new MySqlConnection ("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
-				using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
-				{
 
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;"))
+            //using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
+            {
+                
 
-					DataTable klasTable = new DataTable();
-					adapter.Fill(klasTable);
+                DataTable klasTable = new DataTable();
+                adapter.Fill(klasTable);
 
-					// Putting the KlasNaam and periode in a string to display in the listBox
-					foreach (DataRow row in klasTable.Rows)
-						listBox1.Items.Add(string.Format("{0}  -  Periode {1}", row[0], row[1]));
-				}
-			} else {
-				using (MySqlConnection con = new MySqlConnection ("server=127.0.0.1;uid=root;pwd=;database=FaceIT;"))
-				using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
-				{
-
-
-					DataTable klasTable = new DataTable();
-					adapter.Fill(klasTable);
-
-					// Putting the KlasNaam and periode in a string to display in the listBox
-					foreach (DataRow row in klasTable.Rows)
-						listBox1.Items.Add(string.Format("{0}  -  Periode {1}", row[0], row[1]));
-				}
-			}
-            
+                // Putting the KlasNaam and periode in a string to display in the listBox
+                foreach (DataRow row in klasTable.Rows)
+                    listBox1.Items.Add(string.Format("{0}  -  Periode {1}", row[0], row[1]));
+            }
         }
 
         private void Form_KeyDown(object sender, KeyEventArgs e)
