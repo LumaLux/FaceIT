@@ -98,6 +98,7 @@ namespace FaceIT
              //conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=project_innovate;";
              conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
              string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam AND Periode=@Periode;";
+             string myquerystringleerling = "DELETE FROM leerling WHERE Klas_KlasNaam=@KlasNaam AND Klas_Periode=@Periode;";
 
              // Check the connection and the query
              try
@@ -109,6 +110,18 @@ namespace FaceIT
                  cmd.Parameters.AddWithValue("@KlasNaam", KlasNaam);
                  cmd.Parameters.AddWithValue("@Periode", Periode);
                  cmd.ExecuteNonQuery();
+                 cmd.CommandText = myquerystringleerling;
+                 cmd.ExecuteNonQuery();
+				 String path = System.Reflection.Assembly.GetEntryAssembly().Location;
+				 if (path.EndsWith("Debug/FaceIT.exe"))
+				 {
+					 path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
+				 }
+				 else if (path.EndsWith("Release/FaceIT.exe"))
+				 {
+					 path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
+				 }
+				 System.IO.Directory.Delete(path, true);
                  MessageBox.Show("Class is successfully deleted!",
                  "Succes!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                  // Close connection                
