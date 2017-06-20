@@ -17,7 +17,6 @@ namespace FaceIT
         private int Periode;
         private string KlasNaam;
         private int CountLessons;
-        private double hh;
 
         public Presence()
         {
@@ -101,8 +100,6 @@ namespace FaceIT
             {
                 label2.Text = String.Format("Total students: {0} of the {1}", fCount, row[2]);
                 CountLessons = Convert.ToInt32(row[3]);
-                string hh = row[3].ToString();
-                double.Parse(hh, System.Globalization.CultureInfo.InvariantCulture);
             }
 
 
@@ -114,7 +111,7 @@ namespace FaceIT
             {
                 DataRow dr = dt.Rows[i];
                 MessageBox.Show(dr["Aanwezig"].ToString());
-                double AanwezigProc = double.Parse(dr["Aanwezig"].ToString(), System.Globalization.CultureInfo.InvariantCulture) / hh * 100 ;
+                int AanwezigProc = (int)Math.Round((double)dr["Aanwezig"] / (double)CountLessons * 100);
                 ListViewItem listitem = new ListViewItem(dr["ID"].ToString());
                 listitem.SubItems.Add(dr["Klas_KlasNaam"].ToString());
                 listitem.SubItems.Add(dr["Aanwezig"].ToString());
