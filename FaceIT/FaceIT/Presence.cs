@@ -109,7 +109,6 @@ namespace FaceIT
             // Where class is sleceted class (Placeholder INF1E),AND ID MATCHES PHOTO ID to get the right class
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            int count3 = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
@@ -122,20 +121,24 @@ namespace FaceIT
                 {
                     path2 = path + "\\" + dr["ID"];
                 }
-
+                ImageList ImageList1 = new ImageList();
+                ImageList1.ImageSize = new Size(64, 64);
                 Array NameImage = Directory.GetFiles(path2);
                 foreach (string img in NameImage)
                 {
-                    MessageBox.Show(img);
+                    //MessageBox.Show(img);
+                    ImageList1.Images.Add(System.Drawing.Image.FromFile(img));
                 }
+                listView1.LargeImageList = ImageList1;
+                listView1.SmallImageList = ImageList1;
+                
+                //listView1.Items.Add(new ListViewItem { ImageIndex = 0, });
                 int AanwezigProc = (int)Math.Round((double)Convert.ToInt32(dr["Aanwezig"]) / (double)CountLessons * 100);
-                ListViewItem listitem = new ListViewItem(dr["Klas_KlasNaam"].ToString());
+                ListViewItem listitem = new ListViewItem();
+                listitem.ImageIndex = 0;
                 listitem.SubItems.Add(dr["Aanwezig"].ToString());
-                listitem.SubItems.Add(AanwezigProc.ToString() + "%");
+                listitem.SubItems.Add(AanwezigProc.ToString() + "%");               
                 listView1.Items.Add(listitem);
-
-
-                count3++;
             }
 
             label1.Text = String.Format("Class: {0}  -  Periode: {1}", KlasNaam, Periode);

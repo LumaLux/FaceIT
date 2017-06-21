@@ -33,13 +33,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.ClassName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Image = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Aanwezig = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Aanwezig_in_procent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.presence_in_percentage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.image = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,13 +71,15 @@
             // 
             // listView1
             // 
+            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ClassName,
+            this.Image,
             this.Aanwezig,
-            this.Aanwezig_in_procent,
-            this.image});
+            this.presence_in_percentage});
             this.listView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.HoverSelection = true;
+            this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
             this.listView1.Location = new System.Drawing.Point(227, 210);
@@ -88,20 +89,20 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // ClassName
+            // Image
             // 
-            this.ClassName.Text = "ClassName";
-            this.ClassName.Width = 90;
+            this.Image.Text = "ClassName";
+            this.Image.Width = 90;
             // 
             // Aanwezig
             // 
             this.Aanwezig.Text = "Presence";
             this.Aanwezig.Width = 90;
             // 
-            // Aanwezig_in_procent
+            // presence_in_percentage
             // 
-            this.Aanwezig_in_procent.Text = "Presence in %";
-            this.Aanwezig_in_procent.Width = 90;
+            this.presence_in_percentage.Text = "Presence in %";
+            this.presence_in_percentage.Width = 90;
             // 
             // label1
             // 
@@ -132,11 +133,6 @@
             this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "label2";
-            // 
-            // image
-            // 
-            this.image.Text = "Images";
-            this.image.Width = 100;
             // 
             // Presence
             // 
@@ -169,11 +165,10 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader ClassName;
+        private System.Windows.Forms.ColumnHeader Image;
         private System.Windows.Forms.ColumnHeader Aanwezig;
-        private System.Windows.Forms.ColumnHeader Aanwezig_in_procent;
+        private System.Windows.Forms.ColumnHeader presence_in_percentage;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ColumnHeader image;
     }
 }
