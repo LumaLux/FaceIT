@@ -15,6 +15,8 @@ namespace FaceIT
     public partial class SelectPage : Form
     {
         public static string SelectedItem;
+		private MySqlConnection con = new MySqlConnection ("server=localhost;uid=root;pwd=12345;database=FaceIT;");
+		//private MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
 
         public SelectPage()
         {
@@ -93,6 +95,39 @@ namespace FaceIT
 				}
                 count++;
 			}
+			int AantalLessen = 0;
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT AantalLessen FROM klas WHERE Klasnaam='"+klas+"' AND Periode="+periode, con))
+            {
+       		    DataTable klasTable = new DataTable();
+                adapter.Fill(klasTable);
+
+				AantalLessen = (int)klasTable.Rows[0][0];
+            }
+			AantalLessen++;
+			MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
+
+            // Set connection / query
+            string myquerystring = "UPDATE klas SET AantalLessen = @AantalLessen WHERE KlasNaam = @klas AND Periode=@periode";
+
+            // Check the connection and the query
+            try
+            {
+                // Open the connection and execute command (query)
+                con.Open();
+                cmd.Connection = con;
+				cmd.Parameters.AddWithValue("@AantalLessen", AantalLessen);
+                cmd.Parameters.AddWithValue("@klas", klas);
+                cmd.Parameters.AddWithValue("@periode", periode);
+                cmd.CommandText = myquerystring;
+                cmd.ExecuteNonQuery();
+                // Close connection
+                con.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                // Show error
+                MessageBox.Show(ex.Message);
+            }
 			Process proc = new System.Diagnostics.Process();
 			String path = System.Reflection.Assembly.GetEntryAssembly().Location;
 			if(path.EndsWith("Debug/FaceIT.exe")){

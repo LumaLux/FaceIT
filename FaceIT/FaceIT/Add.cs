@@ -50,9 +50,8 @@ namespace FaceIT
             cmd = new MySql.Data.MySqlClient.MySqlCommand();
 
             // Set connection / query
-            conn.ConnectionString = "server=localhost;uid=root;pwd=;database=FaceIT;";
-            //conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
-            string myquerystring = "INSERT INTO klas (KlasNaam, Periode, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @Periode, @AantalLeerlingen, @AantalLessen)";
+            conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
+            string myquerystring = "INSERT INTO klas (KlasNaam, Periode, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @Periode, @AantalLeerlingen, 0)";
 
             // Check the connection and the query
             try
@@ -64,7 +63,6 @@ namespace FaceIT
                 cmd.Parameters.AddWithValue("@KlasNaam", ClassName.Text);
                 cmd.Parameters.AddWithValue("@Periode", numericUpDown3.Text);
                 cmd.Parameters.AddWithValue("@AantalLeerlingen", numericUpDown1.Text);
-                cmd.Parameters.AddWithValue("@AantalLessen", numericUpDown2.Text);
 
 
                 cmd.CommandText = myquerystring;
