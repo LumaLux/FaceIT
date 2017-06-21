@@ -122,7 +122,7 @@ namespace FaceIT
                     path2 = path + "\\" + dr["ID"];
                 }
                 ImageList ImageList1 = new ImageList();
-                ImageList1.ImageSize = new Size(64, 64);
+                ImageList1.ImageSize = new Size(128, 128);
                 Array NameImage = Directory.GetFiles(path2);
                 foreach (string img in NameImage)
                 {
