@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -107,41 +107,43 @@ namespace FaceIT
             // Where class is sleceted class (Placeholder INF1E),AND ID MATCHES PHOTO ID to get the right class
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                DataRow dr = dt.Rows[i];
-
-                if(count2 == 1)
-                {
-                    path2 = path + "/" + dr["Folder"];
-                }
-                else
-                {
-                    path2 = path + "\\" + dr["Folder"];
-                }
-                ImageList ImageList1 = new ImageList();
-                ImageList1.ImageSize = new Size(128, 128);
-                Array NameImage = Directory.GetFiles(path2);
-                foreach (string img in NameImage)
-                {
-                    //MessageBox.Show(img);
-                    ImageList1.Images.Add(System.Drawing.Image.FromFile(img));
-                }
-                listView1.LargeImageList = ImageList1;
-                listView1.SmallImageList = ImageList1;
-                
-                //listView1.Items.Add(new ListViewItem { ImageIndex = 0, });
+			ImageList ImageList1 = new ImageList();
+			ImageList1.ImageSize = new Size(128, 128);
+			ArrayList ListAanwezig = new ArrayList();
+			ArrayList ListProcent = new ArrayList();
+			foreach (DataRow row in dt.Rows) 
+			{
+				if(count2 == 1)
+				{
+					path2 = path + "/" + row["Folder"];
+				}
+				else
+				{
+					path2 = path + "\\" + row["Folder"];
+				}
+				string[] NameImage = Directory.GetFiles(path2);
+				ImageList1.Images.Add(System.Drawing.Image.FromFile(NameImage[0]));
 				int AanwezigProc = 0;
+				ListAanwezig.Add(row["Aanwezig"]);
 				if(CountLessons != 0)
 				{
-					AanwezigProc = (int)Math.Round((double)Convert.ToInt32(dr["Aanwezig"]) / (double)CountLessons * 100);
-                }
-                ListViewItem listitem = new ListViewItem();
-                listitem.ImageIndex = 0;
-                listitem.SubItems.Add(dr["Aanwezig"].ToString());
-                listitem.SubItems.Add(AanwezigProc.ToString() + "%");               
-                listView1.Items.Add(listitem);
-            }
+					AanwezigProc = (int)Math.Round((double)Convert.ToInt32(row["Aanwezig"]) / (double)CountLessons * 100);
+				}
+				ListProcent.Add(AanwezigProc);
+			}
+			for(int i = 0;i < ListAanwezig.Count;i++) 
+			{
+				listView1.LargeImageList = ImageList1;
+				listView1.SmallImageList = ImageList1;
+
+
+				ListViewItem listitem = new ListViewItem();
+				listitem.ImageIndex = i;
+				listitem.SubItems.Add(ListAanwezig[i].ToString());
+				listitem.SubItems.Add(ListProcent[i].ToString() + "%");               
+				listView1.Items.Add(listitem);
+
+			}
 
             label1.Text = String.Format("Class: {0}  -  Periode: {1}", KlasNaam, Periode);
 
