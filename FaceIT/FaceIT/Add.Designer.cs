@@ -73,7 +73,7 @@
             // 
             // ClassName
             // 
-            this.ClassName.Location = new System.Drawing.Point(346, 278);
+            this.ClassName.Location = new System.Drawing.Point(346, 244);
             this.ClassName.Name = "ClassName";
             this.ClassName.Size = new System.Drawing.Size(364, 22);
             this.ClassName.TabIndex = 2;
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(426, 225);
+            this.label1.Location = new System.Drawing.Point(426, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 41);
             this.label1.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(359, 382);
+            this.label2.Location = new System.Drawing.Point(358, 410);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(310, 41);
             this.label2.TabIndex = 6;
@@ -113,7 +113,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(346, 449);
+            this.numericUpDown1.Location = new System.Drawing.Point(345, 477);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown1.TabIndex = 9;
@@ -135,7 +135,7 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(346, 357);
+            this.numericUpDown3.Location = new System.Drawing.Point(346, 350);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(364, 22);
             this.numericUpDown3.TabIndex = 13;
@@ -145,7 +145,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 20.2F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(454, 303);
+            this.label5.Location = new System.Drawing.Point(454, 296);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 41);
             this.label5.TabIndex = 14;
