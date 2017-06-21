@@ -76,73 +76,80 @@ namespace FaceIT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Text = listBox1.SelectedItem.ToString();
-			string[] lines = Text.Split(new[] { "  -  Periode " }, StringSplitOptions.None);
-            int count = 0;
-            string klas = "";
-            int periode = 0;
-			foreach (string line in lines)
+			if (listBox1.SelectedItem == null)
 			{
-				if (count == 0)
-				{
-					klas = line;
-				}
-				if (count == 1)
-				{
-					periode = Int32.Parse(line);
-				}
-                count++;
+				MessageBox.Show("Select a class");
 			}
-			int AantalLessen = 0;
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT AantalLessen FROM klas WHERE Klasnaam='"+klas+"' AND Periode="+periode, con))
-            {
-       		    DataTable klasTable = new DataTable();
-                adapter.Fill(klasTable);
-
-				AantalLessen = (int)klasTable.Rows[0][0];
-            }
-			AantalLessen++;
-			MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
-
-            // Set connection / query
-            string myquerystring = "UPDATE klas SET AantalLessen = @AantalLessen WHERE KlasNaam = @klas AND Periode=@periode";
-
-            // Check the connection and the query
-            try
-            {
-                // Open the connection and execute command (query)
-                con.Open();
-                cmd.Connection = con;
-				cmd.Parameters.AddWithValue("@AantalLessen", AantalLessen);
-                cmd.Parameters.AddWithValue("@klas", klas);
-                cmd.Parameters.AddWithValue("@periode", periode);
-                cmd.CommandText = myquerystring;
-                cmd.ExecuteNonQuery();
-                // Close connection
-                con.Close();
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                // Show error
-                MessageBox.Show(ex.Message);
-            }
-			Process proc = new System.Diagnostics.Process();
-			String path = System.Reflection.Assembly.GetEntryAssembly().Location;
-			if(path.EndsWith("Debug/FaceIT.exe")){
-				path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/");
-			}else if(path.EndsWith("Release/FaceIT.exe")){
-				path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/");
-			}
-			Console.WriteLine(path);
-			proc.StartInfo.FileName = "/bin/bash";
-			proc.StartInfo.Arguments = "-c \" " + "gnome-terminal -x bash -ic 'cd " + path + "; python3 main.py " + klas + " " + periode + "' \"";
-			proc.StartInfo.UseShellExecute = false;
-			proc.StartInfo.RedirectStandardOutput = true;
-			proc.Start();
-
-			while (!proc.StandardOutput.EndOfStream)
+			else
 			{
-				Console.WriteLine(proc.StandardOutput.ReadLine());
+				string Text = listBox1.SelectedItem.ToString();
+				string[] lines = Text.Split(new[] { "  -  Periode " }, StringSplitOptions.None);
+				int count = 0;
+				string klas = "";
+				int periode = 0;
+				foreach (string line in lines)
+				{
+					if (count == 0)
+					{
+						klas = line;
+					}
+					if (count == 1)
+					{
+						periode = Int32.Parse(line);
+					}
+					count++;
+				}
+				int AantalLessen = 0;
+				using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT AantalLessen FROM klas WHERE Klasnaam='"+klas+"' AND Periode="+periode, con))
+				{
+					DataTable klasTable = new DataTable();
+					adapter.Fill(klasTable);
+
+					AantalLessen = (int)klasTable.Rows[0][0];
+				}
+				AantalLessen++;
+				MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
+
+				// Set connection / query
+				string myquerystring = "UPDATE klas SET AantalLessen = @AantalLessen WHERE KlasNaam = @klas AND Periode=@periode";
+
+				// Check the connection and the query
+				try
+				{
+					// Open the connection and execute command (query)
+					con.Open();
+					cmd.Connection = con;
+					cmd.Parameters.AddWithValue("@AantalLessen", AantalLessen);
+					cmd.Parameters.AddWithValue("@klas", klas);
+					cmd.Parameters.AddWithValue("@periode", periode);
+					cmd.CommandText = myquerystring;
+					cmd.ExecuteNonQuery();
+					// Close connection
+					con.Close();
+				}
+				catch (MySql.Data.MySqlClient.MySqlException ex)
+				{
+					// Show error
+					MessageBox.Show(ex.Message);
+				}
+				Process proc = new System.Diagnostics.Process();
+				String path = System.Reflection.Assembly.GetEntryAssembly().Location;
+				if(path.EndsWith("Debug/FaceIT.exe")){
+					path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/");
+				}else if(path.EndsWith("Release/FaceIT.exe")){
+					path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/");
+				}
+				Console.WriteLine(path);
+				proc.StartInfo.FileName = "/bin/bash";
+				proc.StartInfo.Arguments = "-c \" " + "gnome-terminal -x bash -ic 'cd " + path + "; python3 main.py " + klas + " " + periode + "' \"";
+				proc.StartInfo.UseShellExecute = false;
+				proc.StartInfo.RedirectStandardOutput = true;
+				proc.Start();
+
+				while (!proc.StandardOutput.EndOfStream)
+				{
+					Console.WriteLine(proc.StandardOutput.ReadLine());
+				}
 			}
         }
 

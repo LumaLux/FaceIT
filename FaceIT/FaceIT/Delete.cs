@@ -70,87 +70,94 @@ namespace FaceIT
 
         private void Delete_Button_Click_1(object sender, EventArgs e)
         {
-            // Splitting the string to get the KlasNaam
-            Text = listBox1.SelectedItem.ToString();
-            string[] lines = Text.Split(new[] { "  -  Periode " }, StringSplitOptions.None);
-            int count = 0;
-            foreach (string line in lines)
-            {
-                if(count == 0)
-                {
-                    KlasNaam = line;
-                }
-                if (count == 1)
-                {                   
-                    int x = Int32.Parse(line);
-                    Periode = x;
-                }
-                count++;
-            }
+			if (listBox1.SelectedItem == null)
+			{
+				MessageBox.Show("Select a class");
+			}
+			else
+			{
+				// Splitting the string to get the KlasNaam
+				Text = listBox1.SelectedItem.ToString();
+				string[] lines = Text.Split(new[] { "  -  Periode " }, StringSplitOptions.None);
+				int count = 0;
+				foreach (string line in lines)
+				{
+					if(count == 0)
+					{
+						KlasNaam = line;
+					}
+					if (count == 1)
+					{                   
+						int x = Int32.Parse(line);
+						Periode = x;
+					}
+					count++;
+				}
 
-             MySqlConnection conn;
-             MySqlCommand cmd;
+				MySqlConnection conn;
+				MySqlCommand cmd;
 
-             conn = new MySqlConnection();
-             cmd = new MySqlCommand();
+				conn = new MySqlConnection();
+				cmd = new MySqlCommand();
 
-            // Setting connectionstring and delete query
-            //conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=FaceIT;";
-            conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
-             string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam AND Periode=@Periode;";
-             string myquerystringleerling = "DELETE FROM leerling WHERE Klas_KlasNaam=@KlasNaam AND Klas_Periode=@Periode;";
+				// Setting connectionstring and delete query
+				//conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=FaceIT;";
+				conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
+				string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam AND Periode=@Periode;";
+				string myquerystringleerling = "DELETE FROM leerling WHERE Klas_KlasNaam=@KlasNaam AND Klas_Periode=@Periode;";
 
-             // Check the connection and the query
-             try
-             {
-                 // Open the connection and execute command (query)
-                 conn.Open();
-                 cmd.Connection = conn;
-                 cmd.CommandText = myquerystring;
-                 cmd.Parameters.AddWithValue("@KlasNaam", KlasNaam);
-                 cmd.Parameters.AddWithValue("@Periode", Periode);
-                 cmd.ExecuteNonQuery();
-                 cmd.CommandText = myquerystringleerling;
-                 cmd.ExecuteNonQuery();
-				 String path = System.Reflection.Assembly.GetEntryAssembly().Location;
-                if (path.Contains("/"))
-                {
-                    if (path.EndsWith("Debug/FaceIT.exe"))
-                    {
-                        path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
-                    }
-                    else if (path.EndsWith("Release/FaceIT.exe"))
-                    {
-                        path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
-                    }
-                }
-                else
-                {
-                    if (path.EndsWith("Debug\\FaceIT.exe"))
-                    {
-                        path = path.Replace("FaceIT\\FaceIT\\bin\\Debug\\FaceIT.exe", "FaceRec\\Processed\\" + KlasNaam + "-" + Periode);
-                    }
-                    else if (path.EndsWith("Release\\FaceIT.exe"))
-                    {
-                        path = path.Replace("FaceIT\\FaceIT\\bin\\Release\\FaceIT.exe", "FaceRec\\Processed'\\" + KlasNaam + "-" + Periode);
-                    }
-                }
-                System.IO.Directory.Delete(path, true);
-                 MessageBox.Show("Class is successfully deleted!",
-                 "Succes!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                 // Close connection                
-                 conn.Close();
+				// Check the connection and the query
+				try
+				{
+					// Open the connection and execute command (query)
+					conn.Open();
+					cmd.Connection = conn;
+					cmd.CommandText = myquerystring;
+					cmd.Parameters.AddWithValue("@KlasNaam", KlasNaam);
+					cmd.Parameters.AddWithValue("@Periode", Periode);
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = myquerystringleerling;
+					cmd.ExecuteNonQuery();
+					String path = System.Reflection.Assembly.GetEntryAssembly().Location;
+					if (path.Contains("/"))
+					{
+						if (path.EndsWith("Debug/FaceIT.exe"))
+						{
+							path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
+						}
+						else if (path.EndsWith("Release/FaceIT.exe"))
+						{
+							path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
+						}
+					}
+					else
+					{
+						if (path.EndsWith("Debug\\FaceIT.exe"))
+						{
+							path = path.Replace("FaceIT\\FaceIT\\bin\\Debug\\FaceIT.exe", "FaceRec\\Processed\\" + KlasNaam + "-" + Periode);
+						}
+						else if (path.EndsWith("Release\\FaceIT.exe"))
+						{
+							path = path.Replace("FaceIT\\FaceIT\\bin\\Release\\FaceIT.exe", "FaceRec\\Processed'\\" + KlasNaam + "-" + Periode);
+						}
+					}
+					System.IO.Directory.Delete(path, true);
+					MessageBox.Show("Class is successfully deleted!",
+						"Succes!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+					// Close connection                
+					conn.Close();
 
-                 //Refreshing the page 
-                 new Delete().Show();
-                 this.Hide();
+					//Refreshing the page 
+					new Delete().Show();
+					this.Hide();
 
-             }
-             catch (MySql.Data.MySqlClient.MySqlException ex)
-             {
-                 // Show error
-                 MessageBox.Show(ex.Message);
-             }
+				}
+				catch (MySql.Data.MySqlClient.MySqlException ex)
+				{
+					// Show error
+					MessageBox.Show(ex.Message);
+				}
+			}
         }
 
         private void Back_Click(object sender, EventArgs e)
