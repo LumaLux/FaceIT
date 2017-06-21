@@ -66,28 +66,26 @@ namespace FaceIT
                 count2++;
                 if (path.EndsWith("Debug/FaceIT.exe"))
                 {
-                    path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam);
+					path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
                 }
                 else if (path.EndsWith("Release/FaceIT.exe"))
                 {
-                    path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/" + KlasNaam);
+					path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/" + KlasNaam+ "-" + Periode);
                 }
             }
             else
             {
                 if (path.EndsWith("Debug\\FaceIT.exe"))
                 {
-                    path = path.Replace("FaceIT\\FaceIT\\bin\\Debug\\FaceIT.exe", "FaceRec\\Processed\\" + KlasNaam);
+					path = path.Replace("FaceIT\\FaceIT\\bin\\Debug\\FaceIT.exe", "FaceRec\\Processed\\" + KlasNaam+ "-" + Periode);
                 }
                 else if (path.EndsWith("Release\\FaceIT.exe"))
                 {
-                    path = path.Replace("FaceIT\\FaceIT\\bin\\Release\\FaceIT.exe", "FaceRec\\Processed'\\" + KlasNaam);
+					path = path.Replace("FaceIT\\FaceIT\\bin\\Release\\FaceIT.exe", "FaceRec\\Processed'\\" + KlasNaam+ "-" + Periode);
                 }
             }
             int fCount = Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly).Length;
-                
-                
-
+            
             listView1.View = View.Details;
             //MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
             MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;");
@@ -115,11 +113,11 @@ namespace FaceIT
 
                 if(count2 == 1)
                 {
-                    path2 = path + "/" + dr["ID"];
+                    path2 = path + "/" + dr["Folder"];
                 }
                 else
                 {
-                    path2 = path + "\\" + dr["ID"];
+                    path2 = path + "\\" + dr["Folder"];
                 }
                 ImageList ImageList1 = new ImageList();
                 ImageList1.ImageSize = new Size(128, 128);
@@ -136,7 +134,7 @@ namespace FaceIT
 				int AanwezigProc = 0;
 				if(CountLessons != 0)
 				{
-					int AanwezigProc = (int)Math.Round((double)Convert.ToInt32(dr["Aanwezig"]) / (double)CountLessons * 100);
+					AanwezigProc = (int)Math.Round((double)Convert.ToInt32(dr["Aanwezig"]) / (double)CountLessons * 100);
                 }
                 ListViewItem listitem = new ListViewItem();
                 listitem.ImageIndex = 0;

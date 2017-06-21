@@ -15,7 +15,7 @@ namespace FaceIT
     public partial class SelectPage : Form
     {
         public static string SelectedItem;
-		private MySqlConnection con = new MySqlConnection ("server=localhost;uid=root;pwd=12345;database=FaceIT;");
+		private MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;");
 		//private MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
 
         public SelectPage()
@@ -43,8 +43,6 @@ namespace FaceIT
         {
 
             //Setting the connection info and setting the query to pull data from the database
-            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;"))
-            //using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
             {
                 
