@@ -107,7 +107,12 @@ namespace FaceIT
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 // Show error
-                MessageBox.Show(ex.Message);
+				if (ex.Number == 1062) {
+					MessageBox.Show ("Class already exist.");
+				} else 
+				{
+					MessageBox.Show(ex.Message);
+				}
             }
         }
 
