@@ -144,7 +144,7 @@ namespace FaceIT
 				listView1.Items.Add(listitem);
 
 			}
-
+			listView1.Items.RemoveAt(0);
             label1.Text = String.Format("Class: {0}  -  Periode: {1}", KlasNaam, Periode);
 
             connection.Close();
