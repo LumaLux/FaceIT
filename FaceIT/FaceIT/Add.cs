@@ -70,15 +70,32 @@ namespace FaceIT
                 cmd.CommandText = myquerystring;
                 cmd.ExecuteNonQuery();
 				String path = System.Reflection.Assembly.GetEntryAssembly().Location;
-				if (path.EndsWith("Debug/FaceIT.exe"))
-				{
-					path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed");
-				}
-				else if (path.EndsWith("Release/FaceIT.exe"))
-				{
-					path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed");
-				}
-				System.IO.Directory.CreateDirectory(path + "/" + ClassName.Text + "-" + numericUpDown3.Text);
+                Console.WriteLine(path);
+                if (path.Contains("/"))
+                {
+                    if (path.EndsWith("Debug/FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/");
+                    }
+                    else if (path.EndsWith("Release/FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/");
+                    }
+                    System.IO.Directory.CreateDirectory(path + "/" + ClassName.Text + "-" + numericUpDown3.Text);
+                }
+                else
+                {
+                    if (path.EndsWith("Debug\\FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT\\FaceIT\\bin\\Debug\\FaceIT.exe", "FaceRec\\Processed\\");
+                    }
+                    else if (path.EndsWith("Release\\FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT\\FaceIT\\bin\\Release\\FaceIT.exe", "FaceRec\\Processed'\\");
+                    }
+                    System.IO.Directory.CreateDirectory(path + "\\" + ClassName.Text + "-" + numericUpDown3.Text);
+                }
+               
                 MessageBox.Show("Class successfully added!",
                 "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 // Close connection

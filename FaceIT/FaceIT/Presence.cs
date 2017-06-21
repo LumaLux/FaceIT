@@ -17,6 +17,9 @@ namespace FaceIT
         private int Periode;
         private string KlasNaam;
         private int CountLessons;
+        private int count2;
+        private string path2;
+
 
         public Presence()
         {
@@ -58,9 +61,9 @@ namespace FaceIT
             //MessageBox.Show(KlasNaam);
 
             String path = System.Reflection.Assembly.GetEntryAssembly().Location;
-
-            Console.WriteLine(path);
-            if (path.Contains("/")) {
+            if (path.Contains("/"))
+            {
+                count2++;
                 if (path.EndsWith("Debug/FaceIT.exe"))
                 {
                     path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam);
@@ -82,8 +85,8 @@ namespace FaceIT
                 }
             }
             int fCount = Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly).Length;
-            
-
+                
+                
 
             listView1.View = View.Details;
             MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
@@ -106,20 +109,36 @@ namespace FaceIT
             // Where class is sleceted class (Placeholder INF1E),AND ID MATCHES PHOTO ID to get the right class
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
-                MessageBox.Show(dr["Aanwezig"].ToString());
-                int AanwezigProc = (int)Math.Round((double)dr["Aanwezig"] / (double)CountLessons * 100);
-                ListViewItem listitem = new ListViewItem(dr["ID"].ToString());
-                listitem.SubItems.Add(dr["Klas_KlasNaam"].ToString());
+
+                if(count2 == 1)
+                {
+                    path2 = path + "/" + dr["ID"];
+                }
+                else
+                {
+                    path2 = path + "\\" + dr["ID"];
+                }
+                ImageList ImageList1 = new ImageList();
+                ImageList1.ImageSize = new Size(64, 64);
+                Array NameImage = Directory.GetFiles(path2);
+                foreach (string img in NameImage)
+                {
+                    //MessageBox.Show(img);
+                    ImageList1.Images.Add(System.Drawing.Image.FromFile(img));
+                }
+                listView1.LargeImageList = ImageList1;
+                listView1.SmallImageList = ImageList1;
+                
+                //listView1.Items.Add(new ListViewItem { ImageIndex = 0, });
+                int AanwezigProc = (int)Math.Round((double)Convert.ToInt32(dr["Aanwezig"]) / (double)CountLessons * 100);
+                ListViewItem listitem = new ListViewItem();
+                listitem.ImageIndex = 0;
                 listitem.SubItems.Add(dr["Aanwezig"].ToString());
-                listitem.SubItems.Add(AanwezigProc.ToString() + "%");
-                MessageBox.Show(AanwezigProc.ToString() + "%");
+                listitem.SubItems.Add(AanwezigProc.ToString() + "%");               
                 listView1.Items.Add(listitem);
-
-
             }
 
             label1.Text = String.Format("Class: {0}  -  Periode: {1}", KlasNaam, Periode);
@@ -142,6 +161,11 @@ namespace FaceIT
         {
             this.Close();
             new SelectPage().Show();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,9 +33,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Image = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Aanwezig = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Klas_KlasNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.presence_in_percentage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,18 +71,38 @@
             // 
             // listView1
             // 
+            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
+            this.Image,
             this.Aanwezig,
-            this.Klas_KlasNaam});
+            this.presence_in_percentage});
             this.listView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.HoverSelection = true;
+            this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(226, 210);
+            this.listView1.Location = new System.Drawing.Point(227, 210);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(550, 447);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // Image
+            // 
+            this.Image.Text = "ClassName";
+            this.Image.Width = 90;
+            // 
+            // Aanwezig
+            // 
+            this.Aanwezig.Text = "Presence";
+            this.Aanwezig.Width = 90;
+            // 
+            // presence_in_percentage
+            // 
+            this.presence_in_percentage.Text = "Presence in %";
+            this.presence_in_percentage.Width = 90;
             // 
             // label1
             // 
@@ -145,9 +165,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Image;
         private System.Windows.Forms.ColumnHeader Aanwezig;
-        private System.Windows.Forms.ColumnHeader Klas_KlasNaam;
+        private System.Windows.Forms.ColumnHeader presence_in_percentage;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
     }

@@ -39,7 +39,7 @@ namespace FaceIT
         private void Delete_Load(object sender, EventArgs e)
         {
 
-            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;"))
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;uid=root;database=faceit;"))
             //using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;"))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT KlasNaam,Periode FROM klas", con))
             {
@@ -94,9 +94,9 @@ namespace FaceIT
              conn = new MySqlConnection();
              cmd = new MySqlCommand();
 
-             // Setting connectionstring and delete query
-             //conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=project_innovate;";
-             conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
+            // Setting connectionstring and delete query
+            conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=FaceIT;";
+            //conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
              string myquerystring = "DELETE FROM klas WHERE KlasNaam=@KlasNaam AND Periode=@Periode;";
              string myquerystringleerling = "DELETE FROM leerling WHERE Klas_KlasNaam=@KlasNaam AND Klas_Periode=@Periode;";
 
@@ -113,15 +113,29 @@ namespace FaceIT
                  cmd.CommandText = myquerystringleerling;
                  cmd.ExecuteNonQuery();
 				 String path = System.Reflection.Assembly.GetEntryAssembly().Location;
-				 if (path.EndsWith("Debug/FaceIT.exe"))
-				 {
-					 path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
-				 }
-				 else if (path.EndsWith("Release/FaceIT.exe"))
-				 {
-					 path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
-				 }
-				 System.IO.Directory.Delete(path, true);
+                if (path.Contains("/"))
+                {
+                    if (path.EndsWith("Debug/FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT/FaceIT/bin/Debug/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
+                    }
+                    else if (path.EndsWith("Release/FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/" + KlasNaam + "-" + Periode);
+                    }
+                }
+                else
+                {
+                    if (path.EndsWith("Debug\\FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT\\FaceIT\\bin\\Debug\\FaceIT.exe", "FaceRec\\Processed\\" + KlasNaam + "-" + Periode);
+                    }
+                    else if (path.EndsWith("Release\\FaceIT.exe"))
+                    {
+                        path = path.Replace("FaceIT\\FaceIT\\bin\\Release\\FaceIT.exe", "FaceRec\\Processed'\\" + KlasNaam + "-" + Periode);
+                    }
+                }
+                System.IO.Directory.Delete(path, true);
                  MessageBox.Show("Class is successfully deleted!",
                  "Succes!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                  // Close connection                
