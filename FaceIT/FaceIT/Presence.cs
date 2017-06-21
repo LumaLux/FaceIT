@@ -89,8 +89,8 @@ namespace FaceIT
                 
 
             listView1.View = View.Details;
-            MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
-           // MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;");
+            //MySqlConnection connection = new MySqlConnection("server=127.0.0.1;uid=root;pwd=;database=FaceIT;");
+            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=12345;database=FaceIT;");
             string cmd =String.Format("SELECT * FROM leerling WHERE Klas_KlasNaam = '{0}';", KlasNaam);
             string cmd2 = String.Format("SELECT * FROM klas WHERE KlasNaam = '{0}';", KlasNaam);
             //MessageBox.Show(cmd);
@@ -133,7 +133,11 @@ namespace FaceIT
                 listView1.SmallImageList = ImageList1;
                 
                 //listView1.Items.Add(new ListViewItem { ImageIndex = 0, });
-                int AanwezigProc = (int)Math.Round((double)Convert.ToInt32(dr["Aanwezig"]) / (double)CountLessons * 100);
+				int AanwezigProc = 0;
+				if(CountLessons != 0)
+				{
+					int AanwezigProc = (int)Math.Round((double)Convert.ToInt32(dr["Aanwezig"]) / (double)CountLessons * 100);
+                }
                 ListViewItem listitem = new ListViewItem();
                 listitem.ImageIndex = 0;
                 listitem.SubItems.Add(dr["Aanwezig"].ToString());

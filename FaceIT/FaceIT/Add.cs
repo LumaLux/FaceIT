@@ -51,6 +51,7 @@ namespace FaceIT
 
             // Set connection / query
             conn.ConnectionString = "server=localhost;uid=root;pwd=12345;database=FaceIT;";
+			//conn.ConnectionString = "server=localhost;uid=root;pwd=;database=FaceIT;";
             string myquerystring = "INSERT INTO klas (KlasNaam, Periode, AantalLeerlingen, AantalLessen) VALUES(@KlasNaam, @Periode, @AantalLeerlingen, 0)";
 
             // Check the connection and the query
