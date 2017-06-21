@@ -91,18 +91,18 @@
             // 
             // Image
             // 
-            this.Image.Text = "ClassName";
-            this.Image.Width = 90;
+            this.Image.Text = "Image";
+            this.Image.Width = 150;
             // 
             // Aanwezig
             // 
             this.Aanwezig.Text = "Presence";
-            this.Aanwezig.Width = 90;
+            this.Aanwezig.Width = 75;
             // 
             // presence_in_percentage
             // 
             this.presence_in_percentage.Text = "Presence in %";
-            this.presence_in_percentage.Width = 90;
+            this.presence_in_percentage.Width = 80;
             // 
             // label1
             // 
