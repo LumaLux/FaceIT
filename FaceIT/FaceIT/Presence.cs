@@ -109,6 +109,7 @@ namespace FaceIT
             adapter.Fill(dt);
 			ImageList ImageList1 = new ImageList();
 			ImageList1.ImageSize = new Size(128, 128);
+			ImageList1.ColorDepth = ColorDepth.Depth24Bit;
 			ArrayList ListAanwezig = new ArrayList();
 			ArrayList ListProcent = new ArrayList();
 			foreach (DataRow row in dt.Rows) 
@@ -122,7 +123,19 @@ namespace FaceIT
 					path2 = path + "\\" + row["Folder"];
 				}
 				string[] NameImage = Directory.GetFiles(path2);
-				ImageList1.Images.Add(System.Drawing.Image.FromFile(NameImage[0]));
+				int index = 0;
+				int size = 0;
+				int icount = 0;
+				foreach (string name in NameImage) {
+					System.Drawing.Image img = System.Drawing.Image.FromFile(name);
+					int tsize = img.Width + img.Height;
+					if (tsize > size) {
+						icount = index;
+						size = tsize;
+					}
+					index++;
+				}
+				ImageList1.Images.Add(System.Drawing.Image.FromFile(NameImage[icount]));
 				int AanwezigProc = 0;
 				ListAanwezig.Add(row["Aanwezig"]);
 				if(CountLessons != 0)
