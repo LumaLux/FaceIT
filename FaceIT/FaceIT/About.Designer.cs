@@ -42,7 +42,8 @@
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(242, 314);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "Placeholder\nTest\nTest\nTest";
+            this.richTextBox1.Text = "Deze applicatie is gemaakt door:\nFrank Tieck\nJimmy Habing\nAnouk van der Veen\nNiel" +
+    "s van Wijk\nJasper Folkers\nRobin de Boer\n";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // richTextBox2
