@@ -68,8 +68,8 @@ namespace FaceIT
 					conn.Open();
 					cmd.Connection = conn;
 
-                    ClassName.Text = ClassName.Text.Replace(" ", "_");
-					cmd.Parameters.AddWithValue("@KlasNaam", ClassName.Text);
+                    string Class = ClassName.Text.Replace(" ", "_");
+					cmd.Parameters.AddWithValue("@KlasNaam", Class);
 					cmd.Parameters.AddWithValue("@Periode", numericUpDown3.Text);
 					cmd.Parameters.AddWithValue("@AantalLeerlingen", numericUpDown1.Text);
 
@@ -88,7 +88,7 @@ namespace FaceIT
 						{
 							path = path.Replace("FaceIT/FaceIT/bin/Release/FaceIT.exe", "FaceRec/Processed/");
 						}
-						System.IO.Directory.CreateDirectory(path + "/" + ClassName.Text + "-" + numericUpDown3.Text);
+						System.IO.Directory.CreateDirectory(path + "/" + Class + "-" + numericUpDown3.Text);
 					}
 					else
 					{
@@ -100,7 +100,7 @@ namespace FaceIT
 						{
 							path = path.Replace("FaceIT\\FaceIT\\bin\\Release\\FaceIT.exe", "FaceRec\\Processed'\\");
 						}
-						System.IO.Directory.CreateDirectory(path + "\\" + ClassName.Text + "-" + numericUpDown3.Text);
+						System.IO.Directory.CreateDirectory(path + "\\" + Class + "-" + numericUpDown3.Text);
 					}
 
 					MessageBox.Show("Class successfully added!",
