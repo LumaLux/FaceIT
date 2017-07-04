@@ -68,6 +68,7 @@ namespace FaceIT
 					conn.Open();
 					cmd.Connection = conn;
 
+                    ClassName.Text = ClassName.Text.Replace(" ", "_");
 					cmd.Parameters.AddWithValue("@KlasNaam", ClassName.Text);
 					cmd.Parameters.AddWithValue("@Periode", numericUpDown3.Text);
 					cmd.Parameters.AddWithValue("@AantalLeerlingen", numericUpDown1.Text);
